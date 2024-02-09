@@ -1,0 +1,39 @@
+-Make import component
+-Organize github action (CI/CD)
+
+
+# Use Terraform import
+
+#1: Generate a import.tf file where the import function should be use
+
+import {
+  to = aws_vpc.dev-efimerio-caoba
+  id = "vpc-0ab9fb9eb503155d3"
+}
+
+
+#2: Run the following workflow of Terraform
+
+terraform init
+
+#Generate a file with tf plan where the configuration will be the output
+tf plan -generate-config-out=main.tf
+
+
+# To restart
+
+rm -rf .terraform .terraform.lock.hcl terraform.tfstate terraform.tfstate.backup providers .terragrunt-cac terraform.tfstate.d .terragrunt-cache
+
+# To remake the main.tf
+rm main.tf
+
+
+# To make graph
+
+terraform graph > graphMainAfterImport.dot
+
+
+# Use Terraform funtions
+
+
+

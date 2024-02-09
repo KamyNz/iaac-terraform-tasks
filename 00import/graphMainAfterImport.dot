@@ -1,0 +1,27 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_instance.dev-efimerio-caoba (expand)" [label = "aws_instance.dev-efimerio-caoba", shape = "box"]
+		"[root] aws_lb.alb-mlflow-awscday (expand)" [label = "aws_lb.alb-mlflow-awscday", shape = "box"]
+		"[root] aws_lb_target_group.tg-awscday (expand)" [label = "aws_lb_target_group.tg-awscday", shape = "box"]
+		"[root] aws_s3_bucket.bucket (expand)" [label = "aws_s3_bucket.bucket", shape = "box"]
+		"[root] aws_security_group.instance_security_group (expand)" [label = "aws_security_group.instance_security_group", shape = "box"]
+		"[root] aws_vpc.dev-efimerio-caoba (expand)" [label = "aws_vpc.dev-efimerio-caoba", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] aws_instance.dev-efimerio-caoba (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_lb.alb-mlflow-awscday (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_lb_target_group.tg-awscday (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_s3_bucket.bucket (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_security_group.instance_security_group (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_vpc.dev-efimerio-caoba (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.dev-efimerio-caoba (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_lb.alb-mlflow-awscday (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_lb_target_group.tg-awscday (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket.bucket (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group.instance_security_group (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_vpc.dev-efimerio-caoba (expand)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+	}
+}
+
