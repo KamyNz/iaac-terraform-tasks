@@ -1,0 +1,21 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_s3_bucket.bucket (expand)" [label = "aws_s3_bucket.bucket", shape = "box"]
+		"[root] aws_s3_object.object (expand)" [label = "aws_s3_object.object", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] var.OTU" [label = "var.OTU", shape = "note"]
+		"[root] var.Owner" [label = "var.Owner", shape = "note"]
+		"[root] var.TerminationProtection" [label = "var.TerminationProtection", shape = "note"]
+		"[root] aws_s3_bucket.bucket (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_s3_bucket.bucket (expand)" -> "[root] var.OTU"
+		"[root] aws_s3_bucket.bucket (expand)" -> "[root] var.Owner"
+		"[root] aws_s3_bucket.bucket (expand)" -> "[root] var.TerminationProtection"
+		"[root] aws_s3_object.object (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket.bucket (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_object.object (expand)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+	}
+}
+
