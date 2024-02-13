@@ -23,11 +23,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
 
-      - name: Init | Base Infra
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+
+      - name: Init & Validate| Base Infra
         run: |
           terraform init
           terraform validate
 
-      # - name: Plan | Base Infra
-      #   run: |
-      #     terraform plan -out tfplan
+      - name: Plan | Base Infra
+        run: |
+          terraform plan -out tfplan
+
+      - name: Apply | Base Infra
+        run: |
+          terraform apply tfplan
+          echo "🍏 This job's status is ${{ job.status }}."
