@@ -9,8 +9,6 @@ terraform {
 provider "aws" {
   region                   = var.aws_region
   shared_credentials_files = ["~/.aws/credentials"]
-  profile                  = "dev-mlflow"
-
   default_tags {
     tags = {
       OTU                   = var.OTU
