@@ -9,8 +9,6 @@ defaults:
 #Trigger
 on:
   push:
-    paths:
-      - 02remote-modules/dev
 
 jobs:
   tf_worflow:
