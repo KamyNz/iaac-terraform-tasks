@@ -3,15 +3,6 @@ resource "aws_s3_bucket" "terraform-state-cicd" {
   bucket = "cicd-workspace-terraform-state"
 }
 
-#Telling Terraform to add key to bucket, BEFORE
-# terraform {
-#   backend "s3"{
-#     bucket = "terraform-state-own"
-#     key    = "dev/terraform.tfstate"
-#     region = "us-east-1"
-#   }
-# }
-
 #Making version with bucket
 resource "aws_s3_bucket_versioning" "terraform_state_versioning" {
   bucket = "cicd-workspace-terraform-state"
