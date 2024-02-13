@@ -1,14 +1,12 @@
-name: Dev CI-CD Workflow
+#Trigger
+on:
+  push:
 
+#Defaults of workflow for each run, will use bash shell
 defaults:
   run:
     shell: bash
     working-directory: 02remote-modules/dev
-
-on:
-  push:
-    paths:
-      - 02remote-modules/dev
 
 jobs:
   tf_worflow:
