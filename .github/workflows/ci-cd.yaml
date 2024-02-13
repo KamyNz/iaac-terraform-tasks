@@ -21,9 +21,9 @@ jobs:
 
       - name: Init | Base Infra
         run: |
-          terraform init
           terraform fmt
-          terraform validate
+          # terraform init
+          # terraform validate
 
       # - name: Plan | Base Infra
       #   run: |

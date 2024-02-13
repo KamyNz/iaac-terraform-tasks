@@ -1,5 +1,7 @@
 # Own Ignore
-/Users/camilamv/Documents/Learning/04-CommunityEvents/iaac-terraform-tasks/notes.txt
+notes.txt
+*.providersv2.tf
+02remote-modules/dev/providersv2.tf
 *.log
 .terraform.lock.hcl
 *.sh
