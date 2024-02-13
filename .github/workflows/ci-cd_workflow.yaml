@@ -19,11 +19,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
 
-      - name: Init | Base Infra
-        run: |
-          terraform init
-          terraform fmt
-          terraform validate
+      # - name: Init | Base Infra
+      #   run: |
+      #     terraform init
+      #     terraform fmt
+      #     terraform validate
 
       # - name: Plan | Base Infra
       #   run: |
