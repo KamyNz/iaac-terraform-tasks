@@ -1,12 +1,16 @@
-#Trigger
-on:
-  push:
+name: CI-CD Workflow
 
 #Defaults of workflow for each run, will use bash shell
 defaults:
   run:
     shell: bash
     working-directory: 02remote-modules/dev
+
+#Trigger
+on:
+  push:
+    paths:
+      - 02remote-modules/dev
 
 jobs:
   tf_worflow:
@@ -17,11 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
 
-      # - name: Init | Base Infra
-      #   run: |
-      #     terraform init
-      #     terraform fmt
-      #     terraform validate
+      - name: Init | Base Infra
+        run: |
+          terraform init
+          terraform fmt
+          terraform validate
 
       # - name: Plan | Base Infra
       #   run: |
