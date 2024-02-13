@@ -1,3 +1,8 @@
+variable "instance_name" {
+  description = "Instance name"
+  type        = string
+}
+
 variable "key_pair_name" {
   description = "The name of the key pair to attach to the instance"
   type        = string
