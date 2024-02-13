@@ -1,0 +1,30 @@
+name: Dev CI-CD Workflow
+
+defaults:
+  run:
+    shell: bash
+    working-directory: 02remote-modules/dev
+
+on:
+  push:
+    paths:
+      - 02remote-modules/dev
+
+jobs:
+  tf_worflow:
+    runs-on: ubuntu-latest
+    name: "TF Workflow"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Init | Base Infra
+        run: |
+          terraform init
+          terraform fmt
+          terraform validate
+
+      # - name: Plan | Base Infra
+      #   run: |
+      #     terraform plan -out tfplan

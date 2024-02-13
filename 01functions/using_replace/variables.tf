@@ -9,15 +9,6 @@ variable "instance_type" {
 }
 
 ######################################
-#Variables for AWS Region
-######################################
-variable "aws_region" {
-  description = "The AWS region"
-  type        = string
-  default     = "us-east-1"
-}
-
-######################################
 #Variables for key tags
 ######################################
 variable "OTU" {

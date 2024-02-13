@@ -1,8 +1,19 @@
 -Make import component
 -Organize github action (CI/CD)
 
+# Use Terraform funtions - Folder: 02remote-modules
 
-# Use Terraform import
+# Step 1:
+
+# Step 2: I have to change the aws profile with whom terraform will work for the
+backend using the following:
+
+terraform init -backend-config "profile=XXXX", in my case dev-mlflow
+
+# Step 3: Configure DynamoDB table for lock
+
+
+# Use Terraform import - Folder: 00import
 
 #1: Generate a import.tf file where the import function should be use
 
@@ -33,7 +44,7 @@ rm main.tf
 terraform graph > graphMainAfterImport.dot
 
 
-# Use Terraform funtions
+# Use Terraform funtions - Folder: 01import
 
 
 
